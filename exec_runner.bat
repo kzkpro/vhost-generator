@@ -1,0 +1,1 @@
+php D:\htdocs\vhost_generator\tmp_exec.php

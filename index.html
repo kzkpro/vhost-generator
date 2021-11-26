@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Virtual Host Generator</title>
+	<link rel="stylesheet" type="text/css" href="assets/plugins/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="assets/plugins/datatables/datatables.min.css"/>
+	<link rel="stylesheet" type="text/css" href="assets/css/main.css">
+</head>
+<body>
+
+<div class="container">
+	<br>
+	<div class="title text-center mb-5">
+		<h2>VHost Generator</h2>
+	</div>
+
+	<div class="card mb-5">
+
+		<div class="card-body text-center">
+			<div class="row">
+				<div class="col-12 col-md-2"></div>
+				<div class="col-12 col-md-8">
+					<form id="vhost-location-form" action="server.php?task=savevhostlocation" method="post">
+						<div class="mb-4">
+							<div class="row">
+
+								<div class="col">
+									<div class="input-group mb-3">
+										<input type="text" name="vhost" id="vhostpath" class="form-control" placeholder="Enter Vhost Path">
+										<button type="submit" class="btn btn-primary input-group-text">Save</button>
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</form>
+
+					<form id="vhost-form" action="server.php?task=addvhost" method="post">
+					  <div class="row">
+					    <div class="col">
+					      <input type="text" name="ServerName" class="form-control" placeholder="ServerName">
+					    </div>
+					    <div class="col">
+					      <input type="text" name="Directory" class="form-control" placeholder="Project Directory">
+					    </div>
+					    <div class="col-3 col-xs-1 col-md-2 col-sm-2"><button type="submit" class="btn btn-primary">Submit</button></div>
+					  </div>
+
+
+					</form>
+				</div>
+				<div class="col-12 col-md-2"></div>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col">
+		<div class="card">
+			<div class="card-body">
+				<table id="dtable" class="display" style="width:100%">
+					<thead>
+						<tr>
+							<th>SN</th>
+							<th>ServerName</th>
+							<th>Directory</th>
+							<th></th>
+						</tr>
+					</thead>
+
+				</table>
+			</div>
+		</div>
+
+		</div>
+	</div>
+</div>
+<script type="text/javascript" src="assets/plugins/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="assets/plugins/datatables/datatables.min.js"></script>
+<script type="text/javascript" src="assets/js/main.js"></script>
+</body>
+</html>

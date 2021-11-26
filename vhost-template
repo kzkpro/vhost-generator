@@ -1,0 +1,28 @@
+<VirtualHost *:80>
+  ServerName whimsy.local
+
+  ## Vhost docroot
+  DocumentRoot "/var/www"
+
+  ## Directories, there should at least be a declaration for /var/www
+
+  <Directory "/var/www">
+    Options Indexes FollowSymLinks MultiViews
+    AllowOverride None
+    Require all granted
+  </Directory>
+
+  ## Logging
+  # ErrorLog "/var/log/apache2/whimsy_error.log"
+  ServerSignature Off
+  # CustomLog "/var/log/apache2/whimsy-vm-80_access.log" combined 
+
+  ## Server aliases
+  ServerAlias whimsy6.apache.org
+  ServerAlias whimsy.apache.org
+
+  ## Custom fragment
+  RewriteEngine On
+RewriteRule ^/?(.*) https://%{HTTP_HOST}/$1 [R=permanent,L]
+
+</VirtualHost>
