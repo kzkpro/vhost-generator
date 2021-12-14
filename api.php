@@ -67,6 +67,8 @@ function addVhost($servername, $directory){
     return "ServerName already Esists";
   }else{
     $vhostString = <<<EOT
+    
+    # Domain: $servername
     <VirtualHost *:80>
         DocumentRoot "$directory"
         ServerName $servername
